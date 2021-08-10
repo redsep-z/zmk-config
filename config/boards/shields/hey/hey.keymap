@@ -1,0 +1,74 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
+
+
+/ {
+        keymap {
+                compatible = "zmk,keymap";
+
+                0_layer {
+// -----------------------------------------------------------------------------------------
+// | ESC |  Q  |  W  |  E  |  R  |  T  |        |  Y  |  U   |  I  |  O  |  P  | BKSP ||
+// | TAB  |  A  |  S  |  D  |  F  |  G  |         |  H  |  J   |  K  |  L  | ' |  ENTER   |
+// | SHFT    |  Z  |  X  |  C  |  V  |  B  |        |  N  |  M   |  ,  |  .  ||  MT(mod_RSFT,KC_SLSH)   |
+// | CTL | to(1) | ALT |  | LT(RAISE,BSPC) |      | LT(lower,SPC) |   left|| down | right |
+                        bindings = <
+   &kp ESC  &kp Q &kp W &kp E &kp R &kp T                   &kp Y &kp U  &kp I  &kp O  &kp P   &kp BSPC &kp BSPC
+   &kp TAB &kp A  &kp S &kp D &kp F &kp G                   &kp H &kp J  &kp K  &kp L  &kp SQT         &kp ENTER
+   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B                  &kp N &kp M  &kp COMMA &kp DOT &none &mt RSHIFT SLASH
+   &kp LCTL &none &to 1_layer &none &lt 2_layer BSPC        &lt  1_layer SPACE &kp left &none &kp down &kp right
+                        >;
+                };
+
+                1_layer {
+// -----------------------------------------------------------------------------------------
+// |     |  6  |  7  |  8  |  9 |  0    |     |         |     |     |     |    |    |   del  | |
+// |  caps |  5  |  4  |  3  |  2 |  1  |     |         |     |  =  |  -  |  ;  |  '   |
+// |        |   /  |   *  |   -  |  +   |  \  |         |   [ |  ]  |  ,  |  .   ||   ? |
+// |     |  to(2)   |     |      bspc         |         |     space      |     |     |     |
+                        bindings = <
+   &trans &kp N6 &kp N7  &kp N8 &kp N9 &kp N0                   &none &none &none &none &none &kp del &kp del
+   &trans &kp N5  &kp N4  &kp N3  &kp N2  &kp N1                &none &kp equal &kp minus &kp SEMI &kp SQT &trans
+   &trans &none  &kp divide  &kp multiply &kp minus &kp plus    &kp lbkt  &kp rbkt &kp COMMA &kp DOT &none &kp qmark
+   &trans &trans &to 2_layer &trans  &trans         &kp bspc    &kp space         &trans &trans &trans &trans
+                        >;
+                };
+
+                2_layer {
+// -----------------------------------------------------------------------------------------
+// |    | F1  |  F2 |  F3 |  F4 |  F5 |            |  F6  |  F7 |  F8 |  F9 | F10 |     | |
+// |     | home | end | pgup | pgdown ||           |     |      |     |  F11| F12 |         |
+// |      | print | ins | scroll | pause | |       |     |      |     |     |     | up  |    |
+// |     |  to(3) |     |                  |       |                   | left | down | right |
+                        bindings = <
+   &trans  &kp F1 &kp F2 &kp F3 &kp F4  &kp F5               &kp F6  &kp F7 &kp F8 &kp F9 &kp F10 &trans &trans
+   &trans &kp HOME &kp end &kp pg_up &kp pg_down &none       &none &none &none &kp F11 &kp F12           &trans
+   &trans  &none    &none     &none    &none    &none        &none   &none   &none   &kp up &none   &trans
+   &trans &trans &to 3_layer  &trans            &trans       &trans          &kp left  &trans   &kp down  &kp right
+                        >;
+                };
+
+                3_layer {
+// -----------------------------------------------------------------------------------------
+// | ~  |  !  |  @  |  #  |  $  |  %  |         |  ^  |  &  |  *  |  (  |  )  |      ||
+// |      |    |    |   / | * | <  |            | >  |  +  |  _  |  :  | "    |       |
+// |      |    |     |    |     |    |          | { | } |  | |     |        |          |
+// |       | to(0)   |    |      |              |                |     |      |      |
+                        bindings = <
+   &kp TILD &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT         &kp CARET  &kp AMPS &kp STAR &kp LPAR &kp RPAR &trans &trans
+   &trans   &none   &none  &kp divide  &kp STAR  &kp lt         &kp gt   &kp plus &kp subtract  &none   &none         &trans
+   &trans   &reset   &none        &none       &none             &kp LPAR  &kp RPAR   &kp pipe2  &none   &none  &trans
+   &trans   &trans &to 0_layer   &trans          &trans         &trans      &trans     &trans        &trans    &trans
+                        >;
+                };
+
+        };
+};
