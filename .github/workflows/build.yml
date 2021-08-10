@@ -33,29 +33,29 @@ jobs:
         run: west update
       - name: West Zephyr export
         run: west zephyr-export
-      - name: West Build (Lily58 Left)
-        run: west build -s zmk/app -b nrfmicro_13 -- -DSHIELD=lily58_left -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
-      - name: Lily58 DTS File
+      - name: West Build (hey Left)
+        run: west build -s zmk/app -b nrfmicro_13 -- -DSHIELD=hey_left -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
+      - name: hey DTS File
         if: ${{ always() }}
         run: cat -n build/zephyr/nrfmicro_13.dts.pre.tmp
-      - name: Lily58 Left Kconfig file
+      - name: hey Left Kconfig file
         run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
       - name: Rename zmk.uf2
-        run: cp build/zephyr/zmk.uf2 lily58_left_nrfmicro_13.uf2
-      - name: Archive (Lily58 Left)
+        run: cp build/zephyr/zmk.uf2 hey_left_nrfmicro_13.uf2
+      - name: Archive (hey Left)
         uses: actions/upload-artifact@v2
         with:
           name: firmware
-          path: lily58_left_nrfmicro_13.uf2
-      - name: West Build (Lily58 Right)
-        run: west build --pristine -s zmk/app -b nrfmicro_13 -- -DSHIELD=lily58_right -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
+          path: hey_left_nrfmicro_13.uf2
+      - name: West Build (hey Right)
+        run: west build --pristine -s zmk/app -b nrfmicro_13 -- -DSHIELD=hey_right -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
 
-      - name: Lily58 Right Kconfig file
+      - name: hey Right Kconfig file
         run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
       - name: Rename zmk.uf2
-        run: cp build/zephyr/zmk.uf2 lily58_right_nrfmicro_13.uf2
-      - name: Archive (Lily58 Right)
+        run: cp build/zephyr/zmk.uf2 hey_right_nrfmicro_13.uf2
+      - name: Archive (hey Right)
         uses: actions/upload-artifact@v2
         with:
           name: firmware
-          path: lily58_right_nrfmicro_13.uf2
+          path: hey_right_nrfmicro_13.uf2
