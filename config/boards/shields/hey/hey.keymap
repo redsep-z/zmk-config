@@ -14,7 +14,7 @@
         keymap {
                 compatible = "zmk,keymap";
 
-                0_layer {
+                  0_layer {
 // -----------------------------------------------------------------------------------------
 // | ESC |  Q  |  W  |  E  |  R  |  T  |        |  Y  |  U   |  I  |  O  |  P  | BKSP ||
 // | TAB  |  A  |  S  |  D  |  F  |  G  |         |  H  |  J   |  K  |  L  | ' |  ENTER   |
@@ -35,10 +35,10 @@
 // |        |   /  |   *  |   -  |  +   |  \  |         |   [ |  ]  |  ,  |  .   ||   ? |
 // |     |  to(2)   |     |      bspc         |         |     space      |     |     |     |
                         bindings = <
-   &trans &kp N6 &kp N7  &kp N8 &kp N9 &kp N0                   &none &none &none &none &none &kp del &kp del
-   &trans &kp N5  &kp N4  &kp N3  &kp N2  &kp N1                &none &kp equal &kp minus &kp SEMI &kp SQT &trans
-   &trans &none  &kp divide  &kp multiply &kp minus &kp plus    &kp lbkt  &kp rbkt &kp COMMA &kp DOT &none &kp qmark
-   &trans &trans &to 2_layer &trans  &trans         &kp bspc    &kp space         &trans &trans &trans &trans
+   &trans &kp N6 &kp N7  &kp N8 &kp N9 &kp N0                   &none &none &none &none &none &kp DEL &kp DEL
+   &trans &kp N5  &kp N4  &kp N3  &kp N2  &kp N1                &none &kp EQUAL &kp MINUS &kp SEMI &kp SQT &trans
+   &trans &none  &kp DIVIDE  &kp MULTIPLY &kp MINUS &kp PLUS    &kp LBKT  &kp RBKT &kp COMMA &kp DOT &none &kp QMARK
+   &trans &trans &to 2_layer &trans  &trans         &kp BSPC    &kp SPACE         &trans &trans &trans &trans
                         >;
                 };
 
@@ -50,9 +50,9 @@
 // |     |  to(3) |     |                  |       |                   | left | down | right |
                         bindings = <
    &trans  &kp F1 &kp F2 &kp F3 &kp F4  &kp F5               &kp F6  &kp F7 &kp F8 &kp F9 &kp F10 &trans &trans
-   &trans &kp HOME &kp end &kp pg_up &kp pg_down &none       &none &none &none &kp F11 &kp F12           &trans
-   &trans  &none    &none     &none    &none    &none        &none   &none   &none   &kp up &none   &trans
-   &trans &trans &to 3  &trans            &trans       &trans          &kp left  &trans   &kp down  &kp right
+   &trans &kp HOME &kp END &kp PG_UP &kp PG_DOWN &none       &none &none &none &kp F11 &kp F12           &trans
+   &trans  &none    &none     &none    &none    &none        &none   &none   &none   &KP UP &none   &trans
+   &trans &trans &to 3  &trans            &trans       &trans          &kp LEFT  &trans   &kp DOWN  &kp RIGHT
                         >;
                 };
 
@@ -64,8 +64,8 @@
 // |       | to(0)   |    |      |              |                |     |      |      |
                         bindings = <
    &kp TILD &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT         &kp CARET  &kp AMPS &kp STAR &kp LPAR &kp RPAR &trans &trans
-   &trans   &none   &none  &kp divide  &kp STAR  &kp lt         &kp gt   &kp plus &kp subtract  &none   &none         &trans
-   &trans   &reset   &none        &none       &none             &kp LPAR  &kp RPAR   &kp pipe2  &none   &none  &trans
+   &trans   &none   &none  &kp DIVIDE  &kp STAR  &kp LT         &kp GT   &kp PLUS &kp SUBTRACT  &none   &none         &trans
+   &trans   &reset   &none        &none       &none             &kp LPAR  &kp RPAR   &kp PIPE2  &none   &none  &trans
    &trans   &trans &to 0   &trans          &trans         &trans      &trans     &trans        &trans    &trans
                         >;
                 };
