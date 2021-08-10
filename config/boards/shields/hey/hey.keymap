@@ -24,7 +24,7 @@
    &kp ESC  &kp Q &kp W &kp E &kp R &kp T                   &kp Y &kp U  &kp I  &kp O  &kp P   &kp BSPC &kp BSPC
    &kp TAB &kp A  &kp S &kp D &kp F &kp G                   &kp H &kp J  &kp K  &kp L  &kp SQT         &kp ENTER
    &kp LSHFT &kp Z &kp X &kp C &kp V &kp B                  &kp N &kp M  &kp COMMA &kp DOT &none &mt RSHIFT SLASH
-   &kp LCTL &none &to 1_layer &kp lalt &none &lt 2_layer backspace     &lt 1_layer SPACE &kp left &none &kp down &kp right
+   &kp LCTL &none &to 1 &kp lalt &none &lt 2 backspace     &lt 1  SPACE &kp left &none &kp down &kp right
                         >;
                 };
 
@@ -52,7 +52,7 @@
    &trans  &kp F1 &kp F2 &kp F3 &kp F4  &kp F5               &kp F6  &kp F7 &kp F8 &kp F9 &kp F10 &trans &trans
    &trans &kp HOME &kp end &kp pg_up &kp pg_down &none       &none &none &none &kp F11 &kp F12           &trans
    &trans  &none    &none     &none    &none    &none        &none   &none   &none   &kp up &none   &trans
-   &trans &trans &to 3_layer  &trans            &trans       &trans          &kp left  &trans   &kp down  &kp right
+   &trans &trans &to 3  &trans            &trans       &trans          &kp left  &trans   &kp down  &kp right
                         >;
                 };
 
@@ -66,7 +66,7 @@
    &kp TILD &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT         &kp CARET  &kp AMPS &kp STAR &kp LPAR &kp RPAR &trans &trans
    &trans   &none   &none  &kp divide  &kp STAR  &kp lt         &kp gt   &kp plus &kp subtract  &none   &none         &trans
    &trans   &reset   &none        &none       &none             &kp LPAR  &kp RPAR   &kp pipe2  &none   &none  &trans
-   &trans   &trans &to 0_layer   &trans          &trans         &trans      &trans     &trans        &trans    &trans
+   &trans   &trans &to 0   &trans          &trans         &trans      &trans     &trans        &trans    &trans
                         >;
                 };
 
