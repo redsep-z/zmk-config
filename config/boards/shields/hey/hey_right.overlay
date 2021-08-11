@@ -7,7 +7,7 @@
 #include "hey.dtsi"
 
 &default_transform {
-	row-offset = <4>;
+	col-offset = <6>;
 };
 
 / {
