@@ -7,7 +7,7 @@
 #include "hey.dtsi"
 
 &default_transform {
-	col-offset = <7>;
+  row_offset = <4>;
 };
 
 / {
@@ -15,8 +15,6 @@
         compatible = "zmk,kscan-gpio-matrix";
         label = "KSCAN";
         diode-direction = "col2row";
-
-
 
         col-gpios
         = <&pro_micro_a 2 GPIO_ACTIVE_HIGH>
