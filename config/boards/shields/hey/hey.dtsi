@@ -16,6 +16,7 @@
 		compatible = "zmk,matrix-transform";
 		columns = <13>;
 		rows = <4>;
+    
     // | LA1 | LA2 | LA3 | LA4 | LA5 | LA6 | KC_NO |         | RA1 | RA2 | RA3 | RA4 | RA5 | RA6 | RA7 |
     // | LB1| LB2 | LB3 | LB4 | LB5 | LB6 | KC_NO |          | RB1 | RB2 | RB3 | RB4 | RB5 | KC_NO | RB7 |
     // | LC1 | LC2 | LC3 | LC4 | LC5 | LC6 | KC_NO|          | RC1 | KC_NO | RC3 | RC4 | RC5 | RC6 | RC7 |
